@@ -1,0 +1,62 @@
+<div class="container mt-1.5">
+  <div class="row row-cols-1 row-cols-md-2 g-2">
+    <div class="col" *ngFor="let item of registers">
+      <div class="col col-md-2 offset-md-2">
+        <h4>REGISTRATION </h4>
+      </div>
+
+      <div class="card-body">
+        <p>{{ item.Firstname }}</p>
+        <p>{{ item.Lastname }}</p>
+        <p>{{ item.Email }}</p>
+        <p>{{ item.Password }}</p>
+      </div>
+      <a class="btn btn-primary" [routerLink]="['edit-registers', item._id]"
+        >Edit</a
+      >
+      <div>
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="openDeletePopup(item._id)"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <a class="btn btn-primary" routerLink="/create-registers">Create</a>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="delete Model"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Warning</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">Do you want to delete the item?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-danger" (click)="delete()">
+          Confirm delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="container">
+  <legend>create</legend>
+  <form>
+    <div class="mb-3">
+      <label for="textname" class="form-label">First name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="textname"
+        aria-describedby="emailHelp"
+        name="First name"
+        [(ngModel)]="registers.Firstname"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="textsecname" class="form-label">Last name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="textsecname"
+        aria-describedby="emailHelp"
+        name="Last name"
+        [(ngModel)]="registers.Lastname"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="Email1" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="Email1"
+        aria-describedby="emailHelp"
+        name="Email address"
+        [(ngModel)]="registers.Email"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="txtpassword" class="form-label">Password</label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtpassword"
+        aria-describedby="emailHelp"
+        name="Password"
+        [(ngModel)]="registers.Password"
+      />
+    </div>
+    <button type="button" class="btn btn-primary" (click)="create()">
+      create
+    </button>
+  </form>
+</div>
